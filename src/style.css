@@ -1,3 +1,10 @@
 h1 {
   color: blue;
 }
+.row {
+  display: flex;
+}
+
+.weather-app {
+  padding: 40px;
+}
