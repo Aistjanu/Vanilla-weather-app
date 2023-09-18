@@ -29,8 +29,10 @@ function displayTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#windSpeed");
   let dateElement = document.querySelector("#date");
-  let celsiusTemperature = response.data.main.temp;
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
+
   tempElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -59,8 +61,6 @@ function handleSubmit(event) {
 let form = document.querySelector("#searchForm");
 form.addEventListener("submit", handleSubmit);
 
-search("Toronto");
-
 function showPosition(position) {
   let apiKey = "eec1120b82841e2f3a361f919a4fcd2f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
@@ -75,3 +75,30 @@ function showLocation(event) {
 
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", showLocation);
+
+function displayInFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemperature * 9) / 5 + 32;
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function displayInCelsius(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#temperature");
+  tempElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTemperature = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheitLink");
+fahrenheitLink.addEventListener("click", displayInFahrenheit);
+
+let celsiusLink = document.querySelector("#celsiusLink");
+celsiusLink.addEventListener("click", displayInCelsius);
+
+search("Toronto");

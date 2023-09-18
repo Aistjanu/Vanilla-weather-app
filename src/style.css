@@ -23,7 +23,6 @@ li {
 
 .tempOverview a {
   text-decoration: none;
-  color: #393939;
 }
 
 .tempUnits {
@@ -35,6 +34,11 @@ li {
   margin-right: 20px;
   font-size: 45px;
   vertical-align: middle;
+}
+
+.tempOverview .active {
+  color: #393939;
+  cursor: default;
 }
 
 .weather-app-wrapper {
