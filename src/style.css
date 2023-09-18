@@ -1,13 +1,65 @@
-h1 {
-  color: blue;
-  font-size: 25px;
+h1,
+h2 {
+  font-family: "DM Serif Display", serif;
   font-weight: bold;
+  font-size: 40px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.tempOverview a {
+  text-decoration: none;
+  color: #393939;
+}
+
+.tempUnits {
+  font-size: 15px;
+  vertical-align: super;
+}
+
+.tempOverview i {
+  margin-right: 20px;
+  font-size: 45px;
+  vertical-align: middle;
+}
+
+.weather-app-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+  color: #393939;
 }
 
 .weather-app {
   max-width: 600px;
   padding: 20px;
-  margin: 40px auto;
-  border: 1px solid green;
+  border: 7px solid #ecefd8;
   border-radius: 10px;
+  background-color: #eed690;
+}
+
+[class*="col"] {
+  padding: 1rem;
+}
+
+.btn {
+  background-color: #849561;
+  border-color: #849561;
+}
+
+.searchBar {
+  background-color: #ecefd8;
 }
