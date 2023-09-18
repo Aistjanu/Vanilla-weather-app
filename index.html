@@ -22,6 +22,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -58,26 +59,24 @@
           </div>
           <div class="row align-items-center">
             <div class="col-sm-6">
-              <h2>Toronto</h2>
+              <h2 id="city">Toronto</h2>
               <ul>
                 <li>
-                  <span>Wednesday</span>
-                  <span>2:25,</span>
-                  <span>Clouds</span>
+                  <span id="date">Wednesday 2:25</span>,
+                  <span id="description"></span>
                 </li>
 
                 <li>
-                  <span>Humidity: </span>
-                  <span>79%,</span>
-                  <span>Wind: </span>
-                  <span>4km/h</span>
+                  Humidity:
+                  <span id="humidity"></span>%, Wind:
+                  <span id="windSpeed"></span>km/h
                 </li>
               </ul>
             </div>
             <div class="col-sm-6 tempOverview">
               <h2>
                 <i class="fa-regular fa-sun"></i>
-                <span class="temperature">19</span
+                <span class="temperature" id="temperature"></span
                 ><span class="tempUnits"
                   ><a href="#" id="celsiusLink">°C</a>
                   |
