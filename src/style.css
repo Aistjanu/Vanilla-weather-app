@@ -63,3 +63,8 @@ li {
 .searchBar {
   background-color: #ecefd8;
 }
+
+.form-control:focus {
+  border-color: #849561;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
