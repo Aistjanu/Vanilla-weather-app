@@ -44,8 +44,34 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "eec1120b82841e2f3a361f919a4fcd2f";
-let city = "Toronto";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "eec1120b82841e2f3a361f919a4fcd2f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#searchBarInput").value;
+  search(city);
+}
+
+let form = document.querySelector("#searchForm");
+form.addEventListener("submit", handleSubmit);
+
+search("Toronto");
+
+function showPosition(position) {
+  let apiKey = "eec1120b82841e2f3a361f919a4fcd2f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayTemperature);
+}
+
+function showLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(showPosition);
+}
+
+let locationButton = document.querySelector("#locationButton");
+locationButton.addEventListener("click", showLocation);

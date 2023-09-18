@@ -36,10 +36,11 @@
           </div>
           <div class="row">
             <div class="col-sm-9">
-              <form>
+              <form id="searchForm">
                 <div class="input-group">
                   <input
-                    type="search"
+                    type="text"
+                    id="searchBarInput"
                     class="searchBar form-control form-control-sm rounded"
                     placeholder="Enter your city"
                     aria-label="Search"
@@ -52,7 +53,7 @@
               </form>
             </div>
             <div class="col-sm-3">
-              <button type="button" class="btn btn-sm">
+              <button id="locationButton" type="button" class="btn btn-sm">
                 <i class="fa-solid fa-location-dot fa-lg"></i>
               </button>
             </div>
