@@ -30,16 +30,22 @@ function displayTemperature(response) {
   let windElement = document.querySelector("#windSpeed");
   let dateElement = document.querySelector("#date");
   let celsiusTemperature = response.data.main.temp;
+  let iconElement = document.querySelector("#icon");
   tempElement.innerHTML = Math.round(celsiusTemperature);
   cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed * 3.6);
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "eec1120b82841e2f3a361f919a4fcd2f";
-let city = "London";
+let city = "Toronto";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemperature);
