@@ -55,10 +55,6 @@ li {
   background-color: #eed690;
 }
 
-[class*="col"] {
-  padding: 1rem;
-}
-
 .btn {
   background-color: #849561;
   border-color: #849561;
@@ -71,4 +67,20 @@ li {
 .form-control:focus {
   border-color: #849561;
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.weatherForecast {
+  padding-top: 15px;
+}
+
+.forecastColumn {
+  text-align: center;
+}
+
+.forecastTemp {
+  font-size: 13px;
+}
+
+.currentWeatherRow {
+  padding-top: 15px;
 }
