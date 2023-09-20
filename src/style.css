@@ -2,11 +2,14 @@ h1,
 h2 {
   font-family: "DM Serif Display", serif;
   font-weight: bold;
-  font-size: 40px;
 }
 
 h1 {
   font-size: 25px;
+}
+
+h2 {
+  font-size: 40px;
 }
 
 ul {
@@ -18,7 +21,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .tempOverview a {
@@ -26,19 +29,18 @@ li {
 }
 
 .tempUnits {
-  font-size: 15px;
+  font-size: 17px;
   vertical-align: super;
-}
-
-.tempOverview i {
-  margin-right: 20px;
-  font-size: 45px;
-  vertical-align: middle;
 }
 
 .tempOverview .active {
   color: #393939;
   cursor: default;
+}
+
+.tempOverview .temperature {
+  font-size: 60px;
+  vertical-align: middle;
 }
 
 .weather-app-wrapper {
@@ -77,8 +79,13 @@ li {
   text-align: center;
 }
 
+.forecastDay {
+  font-family: "DM Serif Display", serif;
+  font-size: 18px;
+}
+
 .forecastTemp {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .currentWeatherRow {
